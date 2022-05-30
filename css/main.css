@@ -52,7 +52,13 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .section {
-  padding: 94px 0;
+  padding: 60px 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .section {
+    padding: 94px 0;
+  }
 }
 
 .adress {
@@ -64,7 +70,25 @@ h1, h2, h3, h4, h5, h6, p {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  width: 1200px;
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 .hero-title {
@@ -208,7 +232,8 @@ h1, h2, h3, h4, h5, h6, p {
 .hero {
   background: #2F303A;
   text-align: center;
-  padding: 200px 0px;
+  padding-top: 118px;
+  padding-bottom: 118px;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/people1.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -217,17 +242,31 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding: 200px 0px;
+  }
+}
+
 .hero-title {
   margin-top: 0px;
   margin-bottom: 30px;
   text-transform: uppercase;
-  max-width: 650px;
+  max-width: 360px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
   letter-spacing: 0.06em;
   color: #ffffff;
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-title {
+    font-size: 44px;
+    line-height: 1.36;
+    max-width: 650px;
+  }
 }
 
 .backdrop {
@@ -434,14 +473,26 @@ h1, h2, h3, h4, h5, h6, p {
   color: var(--secondary-text-color);
   font-weight: 700;
   text-transform: uppercase;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .about-subtitle {
+    text-align: left;
+  }
 }
 
 .about-list {
   margin-top: 0px;
-  margin-bottom: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-bottom: -30px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+  }
 }
 
 .about-description {
@@ -449,7 +500,20 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .about-item {
-  width: 270px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-item {
+    flex-basis: calc(100% / 2 - 30px);
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-item {
+    flex-basis: calc(100% / 4 - 30px);
+  }
 }
 
 .about-soc-list {

@@ -201,20 +201,29 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 .menu-open-btn {
   margin-left: auto;
   background: transparent;
   border: none;
   height: 40px;
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 
   @media screen and (min-width: 768px) {
     display: none;
   }
 }
 
-.menu-open-icon {
-  fill: #212121;
+.menu-open-icon,
+.menu-close-icon {
+  fill: currentColor;
 }
 
 // .mob-list {
@@ -262,6 +271,10 @@
   line-height: 1.16;
   letter-spacing: 0.02em;
   color: #757575;
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .messanger-list {

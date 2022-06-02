@@ -46,23 +46,18 @@
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -8px;
-  @media screen and (min-width: 768px) {
-    margin: -15px;
-  }
+  margin: -15px;
 }
 
 .card-item {
+  margin: 15px;
   max-width: 450px;
-  margin-bottom: 30px;
   @media screen and (min-width: 768px) {
     // width: calc(100% / 2 - 30px);
     max-width: 354px;
-    margin: 15px;
   }
 
   @media screen and (min-width: 1200px) {
-    margin: 15px;
     // width: calc(100% / 3 - 30px);
     max-width: 370px;
   }
@@ -76,4 +71,10 @@
       1px 4px 6px rgba(0, 0, 0, 0.16);
     cursor: pointer;
   }
+}
+
+.card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

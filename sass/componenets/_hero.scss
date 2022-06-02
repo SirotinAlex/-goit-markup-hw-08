@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-position: center;
   //background-size: cover;
-  max-width: 1600px;
+  max-width: 480px;
   margin: 0 auto;
   @media screen and (min-width: 1200px) {
     padding: 200px 0px;
@@ -23,15 +23,31 @@
       url(../images/bg_480@2x.jpg);
   }
 
-  @media screen and (min-width: ($mobile + 1px)) {
+  @media screen and (min-width: (481px)) {
     max-width: 768px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url(../images/bg_768.jpg);
     background-size: 768px 400px;
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      background-image: linear-gradient($gradientColor, $gradientColor),
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/bg_768@2x.jpg);
+    }
+
+    @media screen and (min-width: 769px) {
+      max-width: 1600px;
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/bg_1200.jpg);
+      background-size: 1600px 600px;
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+          url(../images/bg_1200@2x.jpg);
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding: 200px 0;
     }
   }
 }

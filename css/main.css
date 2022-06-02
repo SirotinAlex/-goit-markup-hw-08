@@ -152,11 +152,18 @@ h1, h2, h3, h4, h5, h6, p {
 
 .header {
   padding: 10px 0;
+  border-bottom: 1px solid #ececec;
 }
 
-@media screen and (min-widht: 768px) {
+@media screen and (min-width: 768px) {
   .header {
-    padding: 20px 0;
+    padding: 21px 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    padding: 26px 0;
   }
 }
 
@@ -193,7 +200,19 @@ h1, h2, h3, h4, h5, h6, p {
 
 .menu__link.current {
   position: relative;
-  margin-right: 30px;
+  color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .menu__link.current {
+    padding-bottom: 28px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .menu__link.current {
+    padding-bottom: 32px;
+  }
 }
 
 .menu__link.current::after {
@@ -214,7 +233,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .menu__item + .menu__item {
-  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.menu__item.menu__item--margin {
+  margin-left: 0;
 }
 
 .header-nav.main {
@@ -234,6 +257,12 @@ h1, h2, h3, h4, h5, h6, p {
   margin-left: auto;
 }
 
+@media screen and (max-width: 767px) {
+  .contacts__list {
+    display: none;
+  }
+}
+
 .header .container {
   display: flex;
   align-items: center;
@@ -241,11 +270,17 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* емейл,телефон */
 .menu__contact-link {
+  display: flex;
+  align-items: center;
   color: var(--primary-text-color);
   margin-left: 10px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+  .menu__contact-link {
+    font-size: 12px;
+    line-height: 1.17;
+  }
   .menu__contact-link .menu__contact-link + .menu__contact-link {
     margin-top: 10px;
   }
@@ -256,9 +291,27 @@ h1, h2, h3, h4, h5, h6, p {
   margin-left: 0px;
 }
 
-.menu__header-icon {
+.menu__item {
+  box-sizing: border-box;
+}
+
+.menu__item .menu__header-icon {
   fill: currentColor;
-  margin-right: 7px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .menu__item .menu__header-icon {
+    width: 14px;
+    height: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .menu__header-icon.menu__header-icon--size {
+    width: 10px;
+    height: 14px;
+  }
 }
 
 .mob-menu {
@@ -267,16 +320,32 @@ h1, h2, h3, h4, h5, h6, p {
   top: 0;
   left: 0;
   background-color: #ffffff;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.mob-menu_container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .menu-close-btn {
-  display: block;
-  top: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
   background-color: transparent;
   border: none;
 }
@@ -285,10 +354,79 @@ h1, h2, h3, h4, h5, h6, p {
   margin-left: auto;
   background: transparent;
   border: none;
+  height: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-open-btn {
+    display: none;
+  }
 }
 
 .menu-open-icon {
   fill: #212121;
+}
+
+.mob__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+
+.mob__link.current, .mob__link:hover, .mob__link:focus {
+  color: var(--accent-color);
+}
+
+.moby-contact__link.current {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+}
+
+.moby__item--margin {
+  margin-bottom: 10px;
+  margin-top: 32px;
+}
+
+.moby-contact__link {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  color: #757575;
+}
+
+.messanger-list {
+  display: flex;
+  align-items: baseline;
+  margin-top: 64px;
+  flex-wrap: wrap;
+}
+
+.messanger__item {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: calc(22 / 18);
+  letter-spacing: 0.02em;
+}
+
+.messanger__item:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.messanger__item .link {
+  color: var(--accent-color);
 }
 
 .button {
@@ -350,8 +488,8 @@ h1, h2, h3, h4, h5, h6, p {
 .backdrop {
   position: fixed;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 320ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -361,18 +499,26 @@ h1, h2, h3, h4, h5, h6, p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 528px;
+  width: 100%;
   min-height: 581px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
+  z-index: 100;
 }
 
-@media screen and (min-width: 470px), (max-widht: 1199px) {
+@media screen and (min-width: 480px) and (max-width: 1199px) {
   .modal {
     width: 450px;
     height: 609px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    height: 581px;
   }
 }
 
@@ -446,7 +592,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .modal-text {
   width: 100%;
-  height: 138px;
+  height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 12px;
@@ -484,6 +630,7 @@ h1, h2, h3, h4, h5, h6, p {
 .check-text {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .check-icon {
@@ -495,7 +642,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .check-text span {
-  margin-left: 13px;
   width: 16px;
   height: 15px;
   border: 2px solid #212121;
@@ -517,25 +663,44 @@ h1, h2, h3, h4, h5, h6, p {
 
 .condition {
   position: relative;
-  margin-right: 8px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: #757575;
 }
 
+@media screen and (min-width: 1200px) {
+  .condition {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
 .conditionals {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--accent-color);
 }
 
+@media screen and (min-width: 1200px) {
+  .conditionals {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .send-button {
-  position: absolute;
-  transform: translateX(42%) translateY(25%);
+  margin-top: 30px;
   border-radius: 4px;
   padding: 10px 32px;
   min-width: 200px;
